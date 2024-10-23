@@ -5,7 +5,7 @@ RSpec.describe Notification, :type => :model do
     described_class.new(
       task_description: "Task",
       user_id: "3",
-      opearation: "creation",
+      operation: "creation",
       task_id: "7",
       scraped_data: "Brand: Ferrari | Model: Spider | Price: R$ 1000000"
     )
@@ -25,8 +25,8 @@ RSpec.describe Notification, :type => :model do
     expect(subject).to_not be_valid
   end
 
-  it "is not valid without a opearation" do
-    subject.opearation = nil
+  it "is not valid without a operation" do
+    subject.operation = nil
     expect(subject).to_not be_valid
   end
 
