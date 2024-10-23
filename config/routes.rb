@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "notifications#api_message"
+  post "/send_notification", to: "notifications#send_notification"
+  get "/get_all_user_notifications", to: "notifications#get_all_user_notifications"
 end
