@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "notifications#api_message"
   post "/send_notification", to: "notifications#send_notification"
-  get "/get_all_user_notifications", to: "notifications#get_all_user_notifications"
+  get "/get_all_notifications", to: "notifications#get_all_notifications"
 end

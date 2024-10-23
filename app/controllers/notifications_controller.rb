@@ -14,8 +14,8 @@ class NotificationsController < ActionController::API
     send_response("Token is invalid! User not found!", 404) unless is_given_token_valid(params[:token])
   end
 
-  def get_all_user_notifications
-    notifications = Notification.where(user_id: params[:token])
+  def get_all_notifications
+    notifications = Notification.all
     render json: notifications
   end
 
