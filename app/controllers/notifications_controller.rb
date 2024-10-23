@@ -1,5 +1,9 @@
 class NotificationsController < ActionController::API
   before_action :authorize_user, except: :api_message
+
+  def send_response(message, code)
+    render json: {APIresponse: message}, status: code
+  end
   
   def is_given_token_valid(given_token)
     authentication_microservice_response = HTTParty.get("http://authentication_microservice_api:5000/users/valid_token?token=#{given_token}")
