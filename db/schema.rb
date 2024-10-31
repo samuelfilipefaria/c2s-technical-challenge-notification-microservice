@@ -10,13 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_10_23_125004) do
-  create_table "notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "task_description"
-    t.string "user_id"
-    t.string "operation"
-    t.string "task_id"
+ActiveRecord::Schema[7.2].define(version: 2024_10_31_034111) do
+  create_table "user_action_notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "actor_id"
+    t.string "action"
+    t.integer "user_task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "web_scraping_notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "scraped_data"
+    t.string "result"
+    t.integer "web_scraping_task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
